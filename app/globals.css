@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+@plugin "@tailwindcss/typography";
+@theme {
+  /* Colors */
+  --color-lighterDark: #0f172a;
+  --color-dark: #0b1120;
+
+  /* Font sizes */
+  --text-2xs: 0.75rem;
+  --text-2xs--line-height: 1.25rem;
+
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.5rem;
+
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5rem;
+
+  --text-base: 1rem;
+  --text-base--line-height: 1.75rem;
+
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.25rem;
+
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 2.5rem;
+
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1;
+
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1;
+
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+
+  --text-8xl: 6rem;
+  --text-8xl--line-height: 1;
+
+  --text-9xl: 8rem;
+  --text-9xl--line-height: 1;
+
+  /* Shadows */
+  --shadow-glow: 0 0 4px rgb(0 0 0 / 0.1);
+
+  /* Max widths */
+  --container-lg: 33rem;
+  --container-2xl: 40rem;
+  --container-3xl: 50rem;
+  --container-5xl: 66rem;
+
+  /* Background images */
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Custom opacity utilities */
+@utility opacity-1 {
+  opacity: 0.01;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility opacity-2\.5 {
+  opacity: 0.025;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility opacity-7\.5 {
+  opacity: 0.075;
+}
+
+@utility opacity-15 {
+  opacity: 0.15;
 }
